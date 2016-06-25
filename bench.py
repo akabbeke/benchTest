@@ -183,9 +183,12 @@ if __name__ == '__main__':
 
 	t = TransactionManager()
 
+	# Prints out ballances for all users upto todays date
+	todaysDate = datetime.datetime.now().date()
 	for username in t.users:
-		print username, t.users[username].ballanceOnDate(datetime.datetime.now().date())
+		print username, t.users[username].ballanceOnDate(todaysDate)
 
+	# Prints out all transactions that match the keyword 'meals'
 	for username in t.users:
 		t.users[username].printTransactionsByCategory('meals')
 	
